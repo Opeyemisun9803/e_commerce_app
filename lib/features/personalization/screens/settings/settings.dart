@@ -7,7 +7,9 @@ import 'package:t_store/common/widgets/custom_shapes/containers/primary_header_c
 import 'package:t_store/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:t_store/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
+import 'package:t_store/features/personalization/screens/address/address.dart';
 import 'package:t_store/features/personalization/screens/profile/widget/profile.dart';
+import 'package:t_store/features/shop/screens/order/order.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 
@@ -40,12 +42,16 @@ class SettingScreen extends StatelessWidget {
               child: Column(
                 children: [
                   // Account setting
-                  const TSectionHeading(title: 'Account Setting', showActionButton: false,),
-                   const SizedBox(height: TSizes.spaceBtwItems),
+                  const TSectionHeading(title: 'Account Setting', showActionButton: false),
+                  const SizedBox(height: TSizes.spaceBtwItems),
 
-                  const TSettingsMenuTile(icon: Iconsax.safe_home, title: 'My Address', subtitle: 'Set shopping delivery address',),
+                  TSettingsMenuTile(icon: Iconsax.safe_home, title: 'My Address', subtitle: 'Set shopping delivery address', 
+                  onTap: () => Get.to(() => const UserAddressScreen())
+                  ),
                   const TSettingsMenuTile(icon: Iconsax.shopping_cart, title: 'My Cart', subtitle: 'Add, remove product and move to checkout'),
-                  const TSettingsMenuTile(icon: Iconsax.bag_tick, title: 'My Orders', subtitle: 'In-progress and Completed Orders',),
+                  TSettingsMenuTile(icon: Iconsax.bag_tick, title: 'My Orders', subtitle: 'In-progress and Completed Orders',
+                  onTap: () => Get.to(() => const OrderScreen())
+                  ),
                   const TSettingsMenuTile(icon: Iconsax.bank, title: 'My Acount', subtitle: 'Withdral banlance to register bank account'),
                   const TSettingsMenuTile(icon: Iconsax.discount_shape, title: 'My Coupons', subtitle: 'List of all discounts coupons'),
                   const TSettingsMenuTile(icon: Iconsax.notification, title: 'Notifications', subtitle: 'Set any kind of notification message'),
