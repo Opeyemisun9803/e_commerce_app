@@ -18,7 +18,7 @@ class SubCategoriesScreen extends StatelessWidget {
           padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
             children: [
-              // Banner (vedio 29, 4mins)
+              // Banner (vedio 29)
               const TRoundedImage(width: double.infinity, imageUrl: TImages.promoBanner1, applyImageRadius: true),
               const SizedBox(height: TSizes.spaceBtwSections),
 
@@ -32,7 +32,7 @@ class SubCategoriesScreen extends StatelessWidget {
                   SizedBox(
                     height: 120,
                     child: ListView.separated(
-                      itemCount: 4
+                      itemCount: 4,
                       scrollDirection: Axis.horizontal,
                       separatorBuilder: (context, index) => const SizedBox(height: TSizes.spaceBtwItems),
                       itemBuilder: (context, index) => const TProductCardHorizontal()),
